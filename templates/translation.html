@@ -1,0 +1,31 @@
+{% extends 'base.html' %} {% block content %}
+<h2>{% block title %} Sua tradução está pronta! {% endblock %}</h2>
+
+<div class="alert alert-info" role="alert">Código Morse:</div>
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb justify-content-left">
+    <li class="breadcrumb-item active" aria-current="page">
+      {{ morse['code'] }}
+    </li>
+  </ol>
+</nav>
+
+<div class="alert alert-info" role="alert">Tradução:</div>
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb justify-content-left">
+    <li class="breadcrumb-item active" aria-current="page">
+      {{ morse['translation'] }}
+    </li>
+  </ol>
+</nav>
+
+<button
+  type="button"
+  class="btn btn-outline-primary"
+  onclick="window.location.href='/'"
+>
+  Traduzir outro código
+</button>
+{% endblock %}

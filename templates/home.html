@@ -1,0 +1,16 @@
+{% extends 'base.html' %} {% block content %}
+<h1>{% block title %} Insira o Código Morse: {% endblock %}</h1>
+
+<form method="post" id="morseForm">
+  <div class="form-group">
+    <textarea
+      name="morse"
+      id="morseTextArea"
+      placeholder="Digite seu código:"
+      class="form-control"
+      value="{{ request.form['morse'] }}"
+    ></textarea>
+  </div>
+  <button type="submit" class="btn btn-outline-primary">Traduzir</button>
+</form>
+{% endblock %}
