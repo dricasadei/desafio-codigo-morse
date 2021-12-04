@@ -1,17 +1,17 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
+    <!-- Required meta tags: fornecem informações para o navegador WEB-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
+    <!-- Bootstrap CSS: vincula os arquivos CSS do Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+    <!--mecanismo do modelo Jinja-->
     <title>{% block title %} {% endblock %}</title>
   </head>
   <body>
-    <!--<nav class="navbar navbar-expand-md navbar-light bg-light">-->
       <nav class="navbar navbar-light  align-items-left" style="background-color: #80D0E1;">
             <a class="navbar-brand" href="{{ url_for('home')}}">
             <img src="/static/img/codigo-morse.png" width="30" height="30" class="d-inline-block align-top" alt="">
@@ -27,6 +27,7 @@
       {% block content %} {% endblock %}
     </div>
 
+    <!--tag script: são links para o código JavaScript que permitem algumas funcionalidades adicionais do Bootstrap-->
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

@@ -1,5 +1,5 @@
 import sqlite3
-from flask import Flask, render_template, request, url_for, flash, redirect
+from flask import Flask, render_template, request, flash
 from werkzeug.exceptions import abort
 
 from flask import Flask, render_template
@@ -16,12 +16,12 @@ def traduzir(codigoMorse):
 
     aux =[]
 
-    aux = codigo.split(" ")
+    aux = codigo.split("/")
 
     mensagem = ""
     for k in range(len(aux)): 
         if aux[k] in morse.keys():
-            mensagem = mensagem + morse[aux[k]]
+            mensagem = mensagem + str(morse[aux[k]])
 
     if mensagem == "":
         return("Não conseguiu traduzir!")
