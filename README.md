@@ -8,31 +8,27 @@ O objetivo do desafio é ser definida uma arquitetura que resolva a solução, u
 
 # Como executar:
 No *terminal*, é necessário executar os comandos abaixo:
-1. Para criar a ambiente virtual:
-   ```
-   python3 -m venv venv
-   ```
-2. Para ativar o ambiente virtual, nesse momento, para conferir se ocorreu tudo certo, obeserve que seu terminal terá um prefixo *venv*.
+1. Para ativar o ambiente virtual, nesse momento, para conferir se ocorreu tudo certo, obeserve que seu terminal terá um prefixo *venv*.
    ```
    source venv/bin/activate
    ```
-3. Use o pip, que é o gerenciador de pacotes do Python, para instalar o micro framework Flask.
+2. Use o pip, que é o gerenciador de pacotes do Python, para instalar o micro framework Flask.
    ```
    pip install flask
    ``` 
-4. Comando python para configurar o banco de dados sqlite3. Assim que terminar a execução, um novo arquivo arquivo chamado *database.db* aparecerá no diretório *desafio-codigo-morse*
+3. Comando python para configurar o banco de dados sqlite3. Assim que terminar a execução, um novo arquivo arquivo chamado *database.db* aparecerá no diretório *desafio-codigo-morse*
    ```
    python init_db.py
    ```
-5. Comando para informar ao Flask onde encontrar o aplicativo (nesse caso o arquivo app.py).
+4. Comando para informar ao Flask onde encontrar o aplicativo (nesse caso o arquivo app.py).
    ```
    export FLASK_APP=app
    ```
-6. Comando para executar o modo de desenvolvimento.
+5. Comando para executar o modo de desenvolvimento.
    ```
    export FLASK_VENV=development
    ```
-7. Comando para executar o aplicativo. Assim que estiver em execução no terminal, aparecerá algumas informações, inclusive a porta localhost: <http://127.0.0.1:500>, através da qual no *navegador* será possível acessar a aplicação.
+6. Comando para executar o aplicativo. Assim que estiver em execução no terminal, aparecerá algumas informações, inclusive o endereço e porta localhost: <http://127.0.0.1:5000>, através da qual no *navegador* será possível acessar a aplicação.
    ```
    flask run
    ```
