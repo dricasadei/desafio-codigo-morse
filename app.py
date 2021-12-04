@@ -1,8 +1,7 @@
 import sqlite3
+import re #import regex
 from flask import Flask, render_template, request, flash
 from werkzeug.exceptions import abort
-
-from flask import Flask, render_template
 
 def get_db_connection():
     conn = sqlite3.connect('database.db')
@@ -44,8 +43,13 @@ app.config['SECRET_KEY'] = 'casadeiadriana'
 def home():
     if request.method == 'POST':
         codigoMorse = request.form['morse']
-
-        if not codigoMorse:
+        
+        # para tratar caracteres diferentes de .(ponto), -(traço) e /(barra)
+        # retirado do StackOverflow
+        not_allowed_characters=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','1','2','3','4','5','6','7','8','9','0','(',')','$','%','_',' ','\\',',','[',']','{','}','|','<','>','?','!','@',':',';','#','ˆ','*','+','=','`','~','\'','"','&']
+        if any(x in not_allowed_characters for x in codigoMorse):
+            flash('Caracteres inválidos! Utilize somente: .(ponto), -(traço) e /(barra).')
+        elif not codigoMorse:
             flash('Por favor, digite um Código Morse.')
         else:
             traducao = traduzir(codigoMorse)
