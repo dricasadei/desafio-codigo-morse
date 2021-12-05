@@ -96,3 +96,8 @@ Abaixo alguns códigos que podem ser testados:
 ![Página incial](/static/img/img1.png)
 ![Página incial](/static/img/img2.png)
 ![Página incial](/static/img/img3.png)
+
+# Possível evolução:
+Pensando em melhorias para a aplicação, em primeiro momento mudar o banco de dados, atualmente é utilizado o sqlite, porém usualmente é usado apenas para desenvolvimento. Então poderia ser usado o MySQL, PostgreSQL, por exemplo.
+Em relação a melhoria de arquitetura poderia usar os microsserviços, dividindo as responsabilidades em vários serviços executados em processos separados, melhorando também a escalabilidade do projeto.
+Outro ponto mais imediato para melhorar a escalabilidade é a utilização de threads, assim, se houver muitas requisições do cliente o processamento das requisições será mais otimizado.
